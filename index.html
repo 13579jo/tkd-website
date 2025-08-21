@@ -14,8 +14,8 @@
     .text-gold{background:linear-gradient(90deg,#e9d27b,#f1c40f,#d4af37);-webkit-background-clip:text;background-clip:text;color:transparent}
     .card{border-radius:1rem;border:1px solid rgb(229 231 235)}
     .playhint{position:absolute;inset:0;display:flex;align-items:center;justify-content:center}
-    .playhint>span{background:rgba(0,0,0,.4);color:#fff;border-radius:.5rem;padding:.25rem .5rem;font-size:.875rem}
-    video{display:block;width:100%;height:100%;object-fit:cover}
+    .playhint>span{background:rgba(0,0,0,.45);color:#fff;border-radius:.5rem;padding:.25rem .5rem;font-size:.875rem}
+    video, iframe{display:block;width:100%;height:100%;object-fit:cover}
   </style>
 </head>
 <body class="bg-white text-gray-900">
@@ -54,33 +54,92 @@
     </div>
   </section>
 
-  <!-- 師資與經歷（上移） -->
-  <section class="max-w-7xl mx-auto px-4 py-12" id="coaches">
+  <!-- 師資與經歷：單框＋下拉切換教練影片 -->
+  <section class="max-w-3xl mx-auto px-4 py-12" id="coaches">
     <h2 class="text-2xl font-bold mb-6">師資與經歷</h2>
-    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-      <div class="card p-6">
-        <div class="h-40 rounded-xl bg-gray-100 mb-4 flex items-center justify-center">教練照片</div>
-        <h3 class="font-bold">A 教練</h3>
-        <p class="text-gray-600 text-sm mt-1">國際級段位 自由品勢 競技戰術 常駐 崇武 TDS</p>
+
+    <div class="card overflow-hidden">
+      <!-- 標題列與下拉選單 -->
+      <div class="p-4 border-b flex flex-col sm:flex-row gap-3 sm:items-center sm:justify-between">
+        <div class="font-semibold">請選擇教練</div>
+        <div class="flex items-center gap-2">
+          <label for="coachSelect" class="text-sm text-gray-600">教練</label>
+          <select id="coachSelect" class="p-2 rounded-xl border">
+            <option value="" selected>— 請選擇 —</option>
+            <option value="孫總">孫總</option>
+            <option value="羅志峰教練">羅志峰教練</option>
+            <option value="戴教練">戴教練</option>
+            <option value="黃教練">黃教練</option>
+            <option value="粘教練">粘教練</option>
+          </select>
+        </div>
       </div>
-      <div class="card p-6">
-        <div class="h-40 rounded-xl bg-gray-100 mb-4 flex items-center justify-center">教練照片</div>
-        <h3 class="font-bold">B 教練</h3>
-        <p class="text-gray-600 text-sm mt-1">國手教練團 品勢基礎 表現力 常駐 尚武</p>
+
+      <!-- 影片框 -->
+      <div class="relative bg-black aspect-video">
+        <iframe
+          id="coachIframe"
+          class="w-full h-full hidden"
+          src=""
+          title="師資介紹"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowfullscreen
+          referrerpolicy="strict-origin-when-cross-origin">
+        </iframe>
+
+        <!-- 暫無影片占位 -->
+        <div id="coachPlaceholder" class="absolute inset-0 flex flex-col items-center justify-center gap-3 text-center px-4">
+          <img src="101.jpg" alt="師資占位圖" class="w-40 h-24 object-cover rounded-lg opacity-70 hidden sm:block">
+          <p class="text-white/90 text-lg font-semibold">尚未選擇教練或此教練影片尚未上傳</p>
+          <p class="text-white/70 text-sm">請於上方選擇教練名稱即可播放對應影片</p>
+        </div>
       </div>
-      <div class="card p-6">
-        <div class="h-40 rounded-xl bg-gray-100 mb-4 flex items-center justify-center">教練照片</div>
-        <h3 class="font-bold">C 教練</h3>
-        <p class="text-gray-600 text-sm mt-1">幼兒啟蒙 安全體能 常駐 尚武</p>
+
+      <div class="p-4 text-sm text-gray-600">
+        管理教學影片 請在下方設定中替換各教練的 YouTube 連結
       </div>
     </div>
+
+    <script>
+      // 教練 → 影片連結設定
+      // ★ 已將你提供的連結放在「羅志峰教練」
+      const coachVideos = {
+        "孫總": "",
+        "羅志峰教練": "https://www.youtube-nocookie.com/embed/r1KgVllEFL8?rel=0&modestbranding=1",
+        "戴教練": "",
+        "黃教練": "",
+        "粘教練": ""
+      };
+
+      const coachSelect = document.getElementById('coachSelect');
+      const coachIframe = document.getElementById('coachIframe');
+      const coachPlaceholder = document.getElementById('coachPlaceholder');
+
+      function showCoachVideo(name) {
+        const url = coachVideos[name] || "";
+        if (url) {
+          coachIframe.src = url;
+          coachIframe.classList.remove('hidden');
+          coachPlaceholder.classList.add('hidden');
+        } else {
+          coachIframe.src = "";
+          coachIframe.classList.add('hidden');
+          coachPlaceholder.classList.remove('hidden');
+        }
+      }
+
+      coachSelect.addEventListener('change', (e) => {
+        showCoachVideo(e.target.value);
+      });
+    </script>
   </section>
 
-  <!-- 我們的實力（改版） -->
+  <!-- 我們的實力：年資簡介｜教練團影片｜大合照 -->
   <section class="max-w-7xl mx-auto px-4 py-12" id="highlights">
     <h2 class="text-2xl font-bold mb-6">我們的實力</h2>
     <div class="grid gap-6 md:grid-cols-3">
-      <!-- 1) 崇武道館年資簡介（文字卡） -->
+      <!-- 1) 崇武道館年資簡介 -->
       <figure class="card overflow-hidden bg-white">
         <div class="p-6">
           <div class="text-sm text-gray-500 mb-1">🏆 崇武道館年資簡介</div>
@@ -93,17 +152,13 @@
         </div>
       </figure>
 
-      <!-- 2) 金牌教練團（影片） -->
+      <!-- 2) 金牌教練團 影片 -->
       <figure class="card overflow-hidden bg-black">
         <div class="relative aspect-video">
           <video
             src="video_coaches.mp4"
             poster="102.jpg"
-            muted
-            controls
-            playsinline
-            preload="metadata"
-          ></video>
+            muted controls playsinline preload="metadata"></video>
           <button class="playhint" aria-label="播放或暫停"
             onclick="const v=this.previousElementSibling; if(v.paused){v.play();}else{v.pause();}">
             <span>點擊播放 暫停</span>
@@ -116,7 +171,7 @@
         </figcaption>
       </figure>
 
-      <!-- 3) 進擊肯定（大合照） -->
+      <!-- 3) 進擊肯定 大合照 -->
       <figure class="card overflow-hidden bg-white">
         <div class="relative aspect-video">
           <img src="103.jpg" alt="進擊肯定 大合照" class="w-full h-full object-cover" loading="lazy" />
@@ -130,7 +185,7 @@
     </div>
   </section>
 
-  <!-- 分館介紹（三館皆影片 文案不變） -->
+  <!-- 分館介紹 三館皆影片 文字不變 -->
   <section class="max-w-7xl mx-auto px-4 py-12" id="branches">
     <h2 class="text-2xl font-bold mb-6">分館介紹</h2>
     <div class="grid md:grid-cols-3 gap-6">
@@ -150,7 +205,7 @@
         </div>
       </article>
 
-      <!-- TDS -->
+      <!-- TDS 分館 -->
       <article class="card p-0 overflow-hidden">
         <div class="relative aspect-video bg-black">
           <video src="video_tds.mp4" poster="102.jpg" muted controls playsinline preload="metadata"></video>
@@ -178,18 +233,18 @@
         <div class="p-6">
           <h3 class="font-bold">尚武道館</h3>
           <p class="mt-2 text-gray-600">初級與啟蒙課程 幼兒 初級 基礎品勢</p>
-          <div class="mt-3 text-sm text-gray-500">地址 電話 LINE 請替換</div>
+          <div class="mt-3 text-sm text-gray-500">地址 電話 LINE 諮詢請替換</div>
         </div>
       </article>
     </div>
   </section>
 
-  <!-- 課程介紹（每張可放影片或照片） -->
+  <!-- 課程介紹 每張可放影片或照片 -->
   <section class="max-w-7xl mx-auto px-4 py-12" id="courses">
     <h2 class="text-2xl font-bold mb-6">課程介紹</h2>
     <div class="md:grid md:grid-cols-3 md:gap-6 overflow-x-auto md:overflow-visible flex gap-4 snap-x">
 
-      <!-- 品勢班：影片示例 -->
+      <!-- 品勢班 影片示例 -->
       <article class="card min-w-[260px] md:min-w-0 snap-start overflow-hidden">
         <div class="relative aspect-video bg-black">
           <video src="course_poomsae.mp4" poster="101.jpg" muted controls playsinline preload="metadata"></video>
@@ -201,11 +256,14 @@
         <div class="p-5">
           <h3 class="font-bold">品勢班</h3>
           <p class="mt-2 text-gray-600">基本功與套路扎根 穩定輸出表現力</p>
-          <div class="mt-3 flex flex-wrap gap-2 text-xs"><span class="px-2 py-1 rounded bg-gray-100">崇武</span><span class="px-2 py-1 rounded bg-gray-100">尚武</span></div>
+          <div class="mt-3 flex flex-wrap gap-2 text-xs">
+            <span class="px-2 py-1 rounded bg-gray-100">崇武</span>
+            <span class="px-2 py-1 rounded bg-gray-100">尚武</span>
+          </div>
         </div>
       </article>
 
-      <!-- 對練班：照片示例 -->
+      <!-- 對練班 照片示例 -->
       <article class="card min-w-[260px] md:min-w-0 snap-start overflow-hidden">
         <div class="relative aspect-video">
           <img src="101.jpg" alt="對練" class="w-full h-full object-cover" loading="lazy" />
@@ -213,11 +271,13 @@
         <div class="p-5">
           <h3 class="font-bold">對練班</h3>
           <p class="mt-2 text-gray-600">競技技術與比賽戰術 臨場反應訓練</p>
-          <div class="mt-3 flex flex-wrap gap-2 text-xs"><span class="px-2 py-1 rounded bg-gray-100">崇武</span></div>
+          <div class="mt-3 flex flex-wrap gap-2 text-xs">
+            <span class="px-2 py-1 rounded bg-gray-100">崇武</span>
+          </div>
         </div>
       </article>
 
-      <!-- 自由品勢：影片示例 -->
+      <!-- 自由品勢 影片示例 -->
       <article class="card min-w-[260px] md:min-w-0 snap-start overflow-hidden">
         <div class="relative aspect-video bg-black">
           <video src="course_freestyle.mp4" poster="102.jpg" muted controls playsinline preload="metadata"></video>
@@ -229,11 +289,13 @@
         <div class="p-5">
           <h3 class="font-bold">自由品勢</h3>
           <p class="mt-2 text-gray-600">創意與音樂融合 展現難度與美感</p>
-          <div class="mt-3 flex flex-wrap gap-2 text-xs"><span class="px-2 py-1 rounded bg-gray-100">TDS</span></div>
+          <div class="mt-3 flex flex-wrap gap-2 text-xs">
+            <span class="px-2 py-1 rounded bg-gray-100">TDS</span>
+          </div>
         </div>
       </article>
 
-      <!-- 跆舞班：影片示例 -->
+      <!-- 跆舞班 影片示例 -->
       <article class="card min-w-[260px] md:min-w-0 snap-start overflow-hidden">
         <div class="relative aspect-video bg-black">
           <video src="course_ktaedance.mp4" poster="102.jpg" muted controls playsinline preload="metadata"></video>
@@ -245,11 +307,14 @@
         <div class="p-5">
           <h3 class="font-bold">跆舞班</h3>
           <p class="mt-2 text-gray-600">節奏與武術表演 舞台自信養成</p>
-          <div class="mt-3 flex flex-wrap gap-2 text-xs"><span class="px-2 py-1 rounded bg-gray-100">TDS</span><span class="px-2 py-1 rounded bg-gray-100">崇武</span></div>
+          <div class="mt-3 flex flex-wrap gap-2 text-xs">
+            <span class="px-2 py-1 rounded bg-gray-100">TDS</span>
+            <span class="px-2 py-1 rounded bg-gray-100">崇武</span>
+          </div>
         </div>
       </article>
 
-      <!-- 初級班：照片示例 -->
+      <!-- 初級班 照片示例 -->
       <article class="card min-w-[260px] md:min-w-0 snap-start overflow-hidden">
         <div class="relative aspect-video">
           <img src="103.jpg" alt="初級班" class="w-full h-full object-cover" loading="lazy" />
@@ -257,11 +322,13 @@
         <div class="p-5">
           <h3 class="font-bold">初級班</h3>
           <p class="mt-2 text-gray-600">零基礎友善 動作分解與安全觀念</p>
-          <div class="mt-3 flex flex-wrap gap-2 text-xs"><span class="px-2 py-1 rounded bg-gray-100">尚武</span></div>
+          <div class="mt-3 flex flex-wrap gap-2 text-xs">
+            <span class="px-2 py-1 rounded bg-gray-100">尚武</span>
+          </div>
         </div>
       </article>
 
-      <!-- 幼兒班：照片示例 -->
+      <!-- 幼兒班 照片示例 -->
       <article class="card min-w-[260px] md:min-w-0 snap-start overflow-hidden">
         <div class="relative aspect-video">
           <img src="103.jpg" alt="幼兒班" class="w-full h-full object-cover" loading="lazy" />
@@ -269,7 +336,9 @@
         <div class="p-5">
           <h3 class="font-bold">幼兒班</h3>
           <p class="mt-2 text-gray-600">啟蒙專注力與協調性 快樂學習</p>
-          <div class="mt-3 flex flex-wrap gap-2 text-xs"><span class="px-2 py-1 rounded bg-gray-100">尚武</span></div>
+          <div class="mt-3 flex flex-wrap gap-2 text-xs">
+            <span class="px-2 py-1 rounded bg-gray-100">尚武</span>
+          </div>
         </div>
       </article>
 
@@ -315,4 +384,3 @@
   </div>
 </body>
 </html>
-
