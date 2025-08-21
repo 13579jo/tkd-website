@@ -4,104 +4,234 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
   <title>崇武道館 TDS分館 尚武道館</title>
-  <meta name="description" content="挑戰極限 站上榮耀舞台｜從道館到國際賽場 專業培訓 堅持自律 成就榮耀" />
+  <meta name="description" content="挑戰極限 站上榮耀舞台 從道館到國際賽場 專業培訓 堅持自律 成就榮耀" />
+  <meta property="og:title" content="崇武道館 TDS分館 尚武道館" />
+  <meta property="og:description" content="專業培訓 堅持自律 成就榮耀" />
+  <meta property="og:image" content="100.jpg" />
+  <meta name="theme-color" content="#111111" />
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
     .text-gold{background:linear-gradient(90deg,#e9d27b,#f1c40f,#d4af37);-webkit-background-clip:text;background-clip:text;color:transparent}
+    .card{border-radius:1rem;border:1px solid rgb(229 231 235)}
   </style>
 </head>
 <body class="bg-white text-gray-900">
   <!-- Header -->
-  <header class="sticky top-0 z-50 bg-white/80 backdrop-blur border-b">
+  <header class="sticky top-0 z-50 bg-white/85 backdrop-blur border-b">
     <div class="max-w-7xl mx-auto h-14 px-4 flex items-center justify-between">
       <a class="font-extrabold tracking-wide">崇武 TDS 尚武</a>
       <nav class="hidden md:flex items-center gap-6">
         <a href="#highlights" class="hover:underline">實力亮點</a>
         <a href="#branches" class="hover:underline">分館介紹</a>
         <a href="#courses" class="hover:underline">課程</a>
-        <a href="#schedule" class="hover:underline">時刻表</a>
-        <a href="#signup" class="px-4 py-2 rounded-xl bg-black text-white">預約試上</a>
+        <a href="#coaches" class="hover:underline">師資</a>
+        <a href="#environment" class="hover:underline">環境</a>
+        <a href="#contact" class="px-4 py-2 rounded-xl bg-black text-white">預約試上</a>
       </nav>
-      <a href="#signup" class="md:hidden text-sm underline">預約</a>
+      <a href="#contact" class="md:hidden text-sm underline">預約</a>
     </div>
   </header>
 
   <!-- Hero -->
   <section class="relative overflow-hidden">
     <div class="absolute inset-0">
-      <img src="100.jpg" alt="崇武道館 總館" class="w-full h-full object-cover">
+      <img src="100.jpg" alt="崇武道館 總館" class="w-full h-full object-cover" />
       <div class="absolute inset-0 bg-black/60"></div>
     </div>
     <div class="relative max-w-7xl mx-auto px-4 py-16 md:py-24 grid md:grid-cols-2 gap-8 items-center">
       <div>
-        <h1 class="text-3xl md:text-6xl font-extrabold leading-tight text-white">挑戰極限 站上<span class="text-gold">榮耀</span>舞台</h1>
+        <h1 class="text-3xl md:text-6xl font-extrabold leading-tight text-white">
+          挑戰極限 站上 <span class="text-gold">榮耀</span> 舞台
+        </h1>
         <p class="mt-4 text-gray-100 text-lg">從道館到國際賽場 專業培訓 堅持自律 成就榮耀</p>
         <div class="mt-6 flex flex-wrap gap-3">
-          <a href="#signup" class="px-5 py-3 rounded-xl bg-white text-black font-semibold">立即預約試上</a>
+          <a href="#contact" class="px-5 py-3 rounded-xl bg-white text-black font-semibold">立即預約試上</a>
           <a href="https://line.me/" class="px-5 py-3 rounded-xl border border-white text-white">加入 LINE 諮詢</a>
         </div>
       </div>
     </div>
   </section>
 
+  <!-- 三大賣點：圖片呈現 -->
+  <section class="max-w-7xl mx-auto px-4 py-12" id="highlights">
+    <h2 class="text-2xl font-bold mb-6">我們的實力</h2>
+    <div class="grid gap-6 md:grid-cols-3">
+      <figure class="card overflow-hidden bg-white">
+        <div class="relative aspect-video">
+          <img src="101.jpg" alt="優秀選手" class="w-full h-full object-cover" loading="lazy" />
+        </div>
+        <figcaption class="p-4">
+          <div class="text-sm text-gray-500 mb-1">🏆 優秀選手</div>
+          <h3 class="font-semibold">實戰經驗豐富 表現穩定</h3>
+          <p class="text-gray-600 text-sm mt-1">舞台沉著冷靜 長期訓練成果可見</p>
+        </figcaption>
+      </figure>
+      <figure class="card overflow-hidden bg-white">
+        <div class="relative aspect-video">
+          <img src="102.jpg" alt="金牌教練團隊" class="w-full h-full object-cover" loading="lazy" />
+        </div>
+        <figcaption class="p-4">
+          <div class="text-sm text-gray-500 mb-1">🥇 金牌教練團隊</div>
+          <h3 class="font-semibold">系統化訓練 精準分組指導</h3>
+          <p class="text-gray-600 text-sm mt-1">每位學員都能被看見 都能獲得回饋</p>
+        </figcaption>
+      </figure>
+      <figure class="card overflow-hidden bg-white">
+        <div class="relative aspect-video">
+          <img src="103.jpg" alt="嚴謹晉級檢定" class="w-full h-full object-cover" loading="lazy" />
+        </div>
+        <figcaption class="p-4">
+          <div class="text-sm text-gray-500 mb-1">📈 嚴謹晉級檢定</div>
+          <h3 class="font-semibold">標準化評量 清楚成長路徑</h3>
+          <p class="text-gray-600 text-sm mt-1">準備 評分 授帶 全程透明可追蹤</p>
+        </figcaption>
+      </figure>
+    </div>
+  </section>
+
   <!-- 分館介紹 -->
   <section class="max-w-7xl mx-auto px-4 py-12" id="branches">
-    <h2 class="text-2xl font-bold mb-4">分館介紹</h2>
+    <h2 class="text-2xl font-bold mb-6">分館介紹</h2>
     <div class="grid md:grid-cols-3 gap-6">
-      <article class="p-6 rounded-2xl border">
-        <img src="101.jpg" alt="崇武道館（總館）" class="rounded-xl mb-3">
-        <h3 class="font-bold">崇武道館（總館）</h3>
-        <p class="mt-2 text-gray-600">總部 核心訓練中心：品勢 對練 幼兒 初級進階</p>
+      <article class="card p-6">
+        <img src="101.jpg" alt="崇武道館 總館" class="rounded-xl mb-3" loading="lazy" />
+        <h3 class="font-bold">崇武道館 總館</h3>
+        <p class="mt-2 text-gray-600">核心訓練中心 品勢 對練 幼兒 初級進階</p>
+        <div class="mt-3 text-sm text-gray-500">地址 電話 LINE 請替換</div>
       </article>
-      <article class="p-6 rounded-2xl border">
-        <img src="102.jpg" alt="TDS 分館" class="rounded-xl mb-3">
+      <article class="card p-6">
+        <img src="102.jpg" alt="TDS 分館" class="rounded-xl mb-3" loading="lazy" />
         <h3 class="font-bold">TDS 分館</h3>
         <p class="mt-2 text-gray-600">自由品勢 公品 跆舞專門訓練</p>
+        <div class="mt-3 text-sm text-gray-500">地址 電話 LINE 請替換</div>
       </article>
-      <article class="p-6 rounded-2xl border">
-        <img src="103.jpg" alt="尚武道館（分館）" class="rounded-xl mb-3">
-        <h3 class="font-bold">尚武道館（分館）</h3>
+      <article class="card p-6">
+        <img src="103.jpg" alt="尚武道館" class="rounded-xl mb-3" loading="lazy" />
+        <h3 class="font-bold">尚武道館</h3>
         <p class="mt-2 text-gray-600">初級與啟蒙課程 幼兒 初級 基礎品勢</p>
+        <div class="mt-3 text-sm text-gray-500">地址 電話 LINE 請替換</div>
       </article>
     </div>
   </section>
 
   <!-- 課程介紹 -->
   <section class="max-w-7xl mx-auto px-4 py-12" id="courses">
-    <h2 class="text-2xl font-bold mb-4">課程介紹</h2>
+    <h2 class="text-2xl font-bold mb-6">課程介紹</h2>
     <div class="md:grid md:grid-cols-3 md:gap-6 overflow-x-auto md:overflow-visible flex gap-4 snap-x">
-      <article class="min-w-[260px] md:min-w-0 snap-start p-5 rounded-2xl border">
+      <article class="card min-w-[260px] md:min-w-0 snap-start p-5">
         <h3 class="font-bold">品勢班</h3>
         <p class="mt-2 text-gray-600">基本功與套路扎根 穩定輸出表現力</p>
+        <div class="mt-3 flex flex-wrap gap-2 text-xs"><span class="px-2 py-1 rounded bg-gray-100">崇武</span><span class="px-2 py-1 rounded bg-gray-100">尚武</span></div>
       </article>
-      <article class="min-w-[260px] md:min-w-0 snap-start p-5 rounded-2xl border">
+      <article class="card min-w-[260px] md:min-w-0 snap-start p-5">
         <h3 class="font-bold">對練班</h3>
         <p class="mt-2 text-gray-600">競技技術與比賽戰術 臨場反應訓練</p>
+        <div class="mt-3 flex flex-wrap gap-2 text-xs"><span class="px-2 py-1 rounded bg-gray-100">崇武</span></div>
       </article>
-      <article class="min-w-[260px] md:min-w-0 snap-start p-5 rounded-2xl border">
+      <article class="card min-w-[260px] md:min-w-0 snap-start p-5">
         <h3 class="font-bold">自由品勢</h3>
-        <p class="mt-2 text-gray-600">創意與音樂融合 展現高難度與美感</p>
+        <p class="mt-2 text-gray-600">創意與音樂融合 展現難度與美感</p>
+        <div class="mt-3 flex flex-wrap gap-2 text-xs"><span class="px-2 py-1 rounded bg-gray-100">TDS</span></div>
       </article>
-      <article class="min-w-[260px] md:min-w-0 snap-start p-5 rounded-2xl border">
+      <article class="card min-w-[260px] md:min-w-0 snap-start p-5">
         <h3 class="font-bold">跆舞班</h3>
         <p class="mt-2 text-gray-600">節奏與武術表演 舞台自信養成</p>
+        <div class="mt-3 flex flex-wrap gap-2 text-xs"><span class="px-2 py-1 rounded bg-gray-100">TDS</span><span class="px-2 py-1 rounded bg-gray-100">崇武</span></div>
       </article>
-      <article class="min-w-[260px] md:min-w-0 snap-start p-5 rounded-2xl border">
+      <article class="card min-w-[260px] md:min-w-0 snap-start p-5">
         <h3 class="font-bold">初級班</h3>
         <p class="mt-2 text-gray-600">零基礎友善 動作分解與安全觀念</p>
+        <div class="mt-3 flex flex-wrap gap-2 text-xs"><span class="px-2 py-1 rounded bg-gray-100">尚武</span></div>
       </article>
-      <article class="min-w-[260px] md:min-w-0 snap-start p-5 rounded-2xl border">
+      <article class="card min-w-[260px] md:min-w-0 snap-start p-5">
         <h3 class="font-bold">幼兒班</h3>
         <p class="mt-2 text-gray-600">啟蒙專注力與協調性 快樂學習</p>
+        <div class="mt-3 flex flex-wrap gap-2 text-xs"><span class="px-2 py-1 rounded bg-gray-100">尚武</span></div>
       </article>
+    </div>
+  </section>
+
+  <!-- 師資與資歷 -->
+  <section class="max-w-7xl mx-auto px-4 py-12" id="coaches">
+    <h2 class="text-2xl font-bold mb-6">師資與資歷</h2>
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div class="card p-6">
+        <div class="h-40 rounded-xl bg-gray-100 mb-4 flex items-center justify-center">教練照片</div>
+        <h3 class="font-bold">A 教練</h3>
+        <p class="text-gray-600 text-sm mt-1">國際級段位 自由品勢 競技戰術 常駐 崇武 TDS</p>
+      </div>
+      <div class="card p-6">
+        <div class="h-40 rounded-xl bg-gray-100 mb-4 flex items-center justify-center">教練照片</div>
+        <h3 class="font-bold">B 教練</h3>
+        <p class="text-gray-600 text-sm mt-1">國手教練團 品勢基礎 表現力 常駐 尚武</p>
+      </div>
+      <div class="card p-6">
+        <div class="h-40 rounded-xl bg-gray-100 mb-4 flex items-center justify-center">教練照片</div>
+        <h3 class="font-bold">C 教練</h3>
+        <p class="text-gray-600 text-sm mt-1">幼兒啟蒙 安全體能 常駐 尚武</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 環境照片 你可先重用現有圖 或後續替換 -->
+  <section class="max-w-7xl mx-auto px-4 py-12" id="environment">
+    <h2 class="text-2xl font-bold mb-6">環境照片</h2>
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+      <figure class="card overflow-hidden">
+        <img src="101.jpg" alt="更衣區" class="w-full h-40 object-cover" loading="lazy" />
+        <figcaption class="p-2 text-sm text-gray-600">更衣區</figcaption>
+      </figure>
+      <figure class="card overflow-hidden">
+        <img src="102.jpg" alt="地墊" class="w-full h-40 object-cover" loading="lazy" />
+        <figcaption class="p-2 text-sm text-gray-600">地墊</figcaption>
+      </figure>
+      <figure class="card overflow-hidden">
+        <img src="103.jpg" alt="安全護具" class="w-full h-40 object-cover" loading="lazy" />
+        <figcaption class="p-2 text-sm text-gray-600">安全護具</figcaption>
+      </figure>
+      <figure class="card overflow-hidden">
+        <img src="100.jpg" alt="家長等候區" class="w-full h-40 object-cover" loading="lazy" />
+        <figcaption class="p-2 text-sm text-gray-600">家長等候區</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- 聯絡表單 -->
+  <section class="max-w-3xl mx-auto px-4 py-12" id="contact">
+    <h2 class="text-2xl font-bold mb-4">預約免費試上</h2>
+    <form class="grid md:grid-cols-2 gap-4" onsubmit="event.preventDefault(); alert('已收到 教練將於 24 小時內與您聯繫');">
+      <input required class="p-3 rounded-xl border" placeholder="家長姓名" />
+      <input required class="p-3 rounded-xl border" placeholder="聯絡電話" />
+      <input class="p-3 rounded-xl border md:col-span-2" placeholder="學生姓名 年齡" />
+      <select class="p-3 rounded-xl border">
+        <option>想體驗的課程</option>
+        <option>品勢班</option><option>對練班</option><option>自由品勢</option>
+        <option>跆舞班</option><option>初級班</option><option>幼兒班</option>
+      </select>
+      <select class="p-3 rounded-xl border">
+        <option>偏好館別</option>
+        <option>崇武</option><option>TDS</option><option>尚武</option>
+      </select>
+      <textarea class="p-3 rounded-xl border md:col-span-2" rows="4" placeholder="備註"></textarea>
+      <button class="p-3 rounded-xl bg-black text-white md:col-span-2">送出</button>
+    </form>
+    <div class="mt-6 flex flex-wrap gap-3">
+      <a href="https://line.me/" class="px-5 py-3 rounded-xl border">加入 LINE 諮詢</a>
+      <a href="tel:02-0000-0000" class="px-5 py-3 rounded-xl border">撥打電話</a>
     </div>
   </section>
 
   <!-- Footer -->
   <footer class="mt-12 border-t">
     <div class="max-w-7xl mx-auto px-4 py-8 text-sm text-gray-600">
-      © 崇武道館 TDS分館 尚武道館｜北投 02-XXXX-XXXX｜<a href="https://line.me/" class="underline">LINE 諮詢</a>
+      © 崇武道館 TDS分館 尚武道館 北投 02-XXXX-XXXX
     </div>
   </footer>
+
+  <!-- 手機固定底部 CTA -->
+  <div class="md:hidden fixed bottom-0 left-0 right-0 bg-white/90 backdrop-blur border-t p-3 flex gap-3">
+    <a href="#contact" class="flex-1 p-3 rounded-xl bg-black text-white text-center">預約試上</a>
+    <a href="https://line.me/" class="flex-1 p-3 rounded-xl border text-center">LINE 諮詢</a>
+  </div>
 </body>
 </html>
