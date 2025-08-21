@@ -7,14 +7,14 @@
   <meta name="description" content="挑戰極限，站上榮耀舞台｜從道館到國際賽場，專業培訓・堅持自律・成就榮耀" />
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
-    .text-gold { background: linear-gradient(90deg,#e9d27b,#f1c40f,#d4af37); -webkit-background-clip: text; background-clip: text; color: transparent; }
+    .text-gold{background:linear-gradient(90deg,#e9d27b,#f1c40f,#d4af37);-webkit-background-clip:text;background-clip:text;color:transparent}
   </style>
 </head>
 <body class="bg-white text-gray-900">
   <!-- Header -->
   <header class="sticky top-0 z-50 bg-white/80 backdrop-blur border-b">
     <div class="max-w-7xl mx-auto h-14 px-4 flex items-center justify-between">
-      <a href="#" class="font-extrabold tracking-wide">崇武・TDS・尚武</a>
+      <a class="font-extrabold tracking-wide">崇武・TDS・尚武</a>
       <nav class="hidden md:flex items-center gap-6">
         <a href="#highlights" class="hover:underline">實力亮點</a>
         <a href="#branches" class="hover:underline">分館介紹</a>
@@ -26,11 +26,10 @@
     </div>
   </header>
 
-  <!-- Hero -->
+  <!-- Hero（使用 100.jpg） -->
   <section class="relative overflow-hidden">
     <div class="absolute inset-0">
-      <img src="https://images.unsplash.com/photo-1521805103425-256195cfff96?q=80&w=1600&auto=format&fit=crop"
-           alt="跆拳道訓練" class="w-full h-full object-cover">
+      <img src="100.jpg" alt="崇武道館 總館" class="w-full h-full object-cover">
       <div class="absolute inset-0 bg-black/60"></div>
     </div>
     <div class="relative max-w-7xl mx-auto px-4 py-16 md:py-24 grid md:grid-cols-2 gap-8 items-center">
@@ -45,55 +44,35 @@
     </div>
   </section>
 
-  <!-- 三大賣點：媒體呈現 -->
+  <!-- 三大賣點：圖片呈現（避免影片破圖） -->
   <section class="max-w-7xl mx-auto px-4 py-12" id="highlights">
     <h2 class="text-2xl font-bold mb-6">我們的實力</h2>
     <div class="grid gap-6 md:grid-cols-3">
-      <!-- 優秀選手：影片 -->
-      <figure class="group overflow-hidden rounded-2xl border bg-black">
-        <div class="relative aspect-video">
-          <video
-            class="w-full h-full object-cover"
-            src="/media/highlights/athletes.mp4"
-            poster="/media/highlights/athletes_poster.jpg"
-            muted
-            playsinline
-            preload="metadata"
-          ></video>
-          <button
-            class="absolute inset-0 flex items-center justify-center"
-            aria-label="播放/暫停影片"
-            onclick="
-              const v=this.previousElementSibling;
-              if(v.paused){v.play();}else{v.pause();}
-            "
-          >
-            <span class="group-hover:scale-110 transition text-white/90 bg-black/40 px-3 py-1 rounded-lg text-sm">
-              點擊播放/暫停
-            </span>
-          </button>
-        </div>
-        <figcaption class="p-4">
-          <div class="flex items-center gap-2 text-sm text-gray-300 mb-1">🏆 優秀選手</div>
-          <h3 class="font-semibold text-white">全國／國際賽實戰片段</h3>
-          <p class="text-gray-300 text-sm mt-1">從熱身到奪牌瞬間，真實呈現訓練成果。</p>
-        </figcaption>
-      </figure>
-      <!-- 金牌教練：照片 -->
       <figure class="group overflow-hidden rounded-2xl border bg-white">
         <div class="relative aspect-video">
-          <img class="w-full h-full object-cover" src="/media/highlights/coaches.jpg" alt="金牌教練團隊" loading="lazy"/>
+          <img src="101.jpg" alt="優秀選手" class="w-full h-full object-cover" loading="lazy">
+        </div>
+        <figcaption class="p-4">
+          <div class="flex items-center gap-2 text-sm text-gray-500 mb-1">🏆 優秀選手</div>
+          <h3 class="font-semibold">全國／國際賽實戰與成果</h3>
+          <p class="text-gray-600 text-sm mt-1">真實舞台表現，展現長期訓練的成果。</p>
+        </figcaption>
+      </figure>
+
+      <figure class="group overflow-hidden rounded-2xl border bg-white">
+        <div class="relative aspect-video">
+          <img src="102.jpg" alt="金牌教練團隊" class="w-full h-full object-cover" loading="lazy">
         </div>
         <figcaption class="p-4">
           <div class="flex items-center gap-2 text-sm text-gray-500 mb-1">🥇 金牌教練團隊</div>
           <h3 class="font-semibold">段位齊備・實戰經驗豐富</h3>
-          <p class="text-gray-600 text-sm mt-1">科學化課表與分組指導，讓每位學員都被看見。</p>
+          <p class="text-gray-600 text-sm mt-1">科學化課表與分組指導，精準看見每位學員。</p>
         </figcaption>
       </figure>
-      <!-- 嚴謹晉級檢定：照片 -->
+
       <figure class="group overflow-hidden rounded-2xl border bg-white">
         <div class="relative aspect-video">
-          <img class="w-full h-full object-cover" src="/media/highlights/promotion.jpg" alt="晉級檢定過程" loading="lazy"/>
+          <img src="103.jpg" alt="嚴謹晉級檢定" class="w-full h-full object-cover" loading="lazy">
         </div>
         <figcaption class="p-4">
           <div class="flex items-center gap-2 text-sm text-gray-500 mb-1">📈 嚴謹晉級檢定</div>
@@ -104,21 +83,24 @@
     </div>
   </section>
 
-  <!-- 分館介紹 -->
+  <!-- 分館介紹（用 101/102/103） -->
   <section class="max-w-7xl mx-auto px-4 py-12" id="branches">
     <h2 class="text-2xl font-bold mb-4">分館介紹</h2>
     <div class="grid md:grid-cols-3 gap-6">
       <article class="p-6 rounded-2xl border">
+        <img src="101.jpg" alt="崇武道館（總館）" class="rounded-xl mb-3">
         <h3 class="font-bold">崇武道館（總館）</h3>
         <p class="mt-2 text-gray-600">總部・核心訓練中心：品勢、對練、幼兒、初級進階。</p>
         <div class="mt-3 text-sm text-gray-500">地址／電話／LINE（請替換）</div>
       </article>
       <article class="p-6 rounded-2xl border">
+        <img src="102.jpg" alt="TDS 分館" class="rounded-xl mb-3">
         <h3 class="font-bold">TDS 分館</h3>
         <p class="mt-2 text-gray-600">自由品勢、公品、跆舞專門訓練。</p>
         <div class="mt-3 text-sm text-gray-500">地址／電話／LINE（請替換）</div>
       </article>
       <article class="p-6 rounded-2xl border">
+        <img src="103.jpg" alt="尚武道館（分館）" class="rounded-xl mb-3">
         <h3 class="font-bold">尚武道館（分館）</h3>
         <p class="mt-2 text-gray-600">初級與啟蒙課程：幼兒、初級、基礎品勢。</p>
         <div class="mt-3 text-sm text-gray-500">地址／電話／LINE（請替換）</div>
@@ -130,50 +112,35 @@
   <section class="max-w-7xl mx-auto px-4 py-12" id="courses">
     <h2 class="text-2xl font-bold mb-4">課程介紹</h2>
     <div class="md:grid md:grid-cols-3 md:gap-6 overflow-x-auto md:overflow-visible flex gap-4 snap-x">
-      <!-- 各卡片的館別標籤 -->
       <article class="min-w-[260px] md:min-w-0 snap-start p-5 rounded-2xl border">
         <h3 class="font-bold">品勢班</h3>
         <p class="mt-2 text-gray-600">基本功與套路扎根，穩定輸出表現力。</p>
-        <div class="mt-3 flex flex-wrap gap-2 text-xs">
-          <span class="px-2 py-1 rounded bg-gray-100">崇武</span>
-          <span class="px-2 py-1 rounded bg-gray-100">尚武</span>
-        </div>
+        <div class="mt-3 flex flex-wrap gap-2 text-xs"><span class="px-2 py-1 rounded bg-gray-100">崇武</span><span class="px-2 py-1 rounded bg-gray-100">尚武</span></div>
       </article>
       <article class="min-w-[260px] md:min-w-0 snap-start p-5 rounded-2xl border">
         <h3 class="font-bold">對練班</h3>
         <p class="mt-2 text-gray-600">競技技術與比賽戰術，臨場反應訓練。</p>
-        <div class="mt-3 flex flex-wrap gap-2 text-xs">
-          <span class="px-2 py-1 rounded bg-gray-100">崇武</span>
-        </div>
+        <div class="mt-3 flex flex-wrap gap-2 text-xs"><span class="px-2 py-1 rounded bg-gray-100">崇武</span></div>
       </article>
       <article class="min-w-[260px] md:min-w-0 snap-start p-5 rounded-2xl border">
         <h3 class="font-bold">自由品勢</h3>
         <p class="mt-2 text-gray-600">創意與音樂融合，展現高難度與美感。</p>
-        <div class="mt-3 flex flex-wrap gap-2 text-xs">
-          <span class="px-2 py-1 rounded bg-gray-100">TDS</span>
-        </div>
+        <div class="mt-3 flex flex-wrap gap-2 text-xs"><span class="px-2 py-1 rounded bg-gray-100">TDS</span></div>
       </article>
       <article class="min-w-[260px] md:min-w-0 snap-start p-5 rounded-2xl border">
         <h3 class="font-bold">跆舞班</h3>
         <p class="mt-2 text-gray-600">節奏與武術表演，舞台自信養成。</p>
-        <div class="mt-3 flex flex-wrap gap-2 text-xs">
-          <span class="px-2 py-1 rounded bg-gray-100">TDS</span>
-          <span class="px-2 py-1 rounded bg-gray-100">崇武</span>
-        </div>
+        <div class="mt-3 flex flex-wrap gap-2 text-xs"><span class="px-2 py-1 rounded bg-gray-100">TDS</span><span class="px-2 py-1 rounded bg-gray-100">崇武</span></div>
       </article>
       <article class="min-w-[260px] md:min-w-0 snap-start p-5 rounded-2xl border">
         <h3 class="font-bold">初級班</h3>
         <p class="mt-2 text-gray-600">零基礎友善，動作分解與安全觀念。</p>
-        <div class="mt-3 flex flex-wrap gap-2 text-xs">
-          <span class="px-2 py-1 rounded bg-gray-100">尚武</span>
-        </div>
+        <div class="mt-3 flex flex-wrap gap-2 text-xs"><span class="px-2 py-1 rounded bg-gray-100">尚武</span></div>
       </article>
       <article class="min-w-[260px] md:min-w-0 snap-start p-5 rounded-2xl border">
         <h3 class="font-bold">幼兒班</h3>
         <p class="mt-2 text-gray-600">啟蒙專注力與協調性，快樂學習。</p>
-        <div class="mt-3 flex flex-wrap gap-2 text-xs">
-          <span class="px-2 py-1 rounded bg-gray-100">尚武</span>
-        </div>
+        <div class="mt-3 flex flex-wrap gap-2 text-xs"><span class="px-2 py-1 rounded bg-gray-100">尚武</span></div>
       </article>
     </div>
   </section>
@@ -185,21 +152,19 @@
       <a href="#signup" class="hidden md:inline-flex items-center px-4 py-2 rounded-xl bg-black text-white">預約試上</a>
     </div>
 
-    <!-- 手機版：月份 Tabs + 分館下拉 + 列表 -->
+    <!-- 手機 -->
     <div class="md:hidden">
       <div id="monthTabsMobile" class="flex gap-2 overflow-x-auto snap-x pb-2"></div>
       <div class="mt-3">
         <label class="text-sm mr-2">選擇分館：</label>
         <select id="branchSelectMobile" class="p-2 rounded-xl border">
-          <option value="崇武">崇武</option>
-          <option value="TDS">TDS</option>
-          <option value="尚武">尚武</option>
+          <option value="崇武">崇武</option><option value="TDS">TDS</option><option value="尚武">尚武</option>
         </select>
       </div>
       <div id="mobileList" class="mt-4 grid gap-3"></div>
     </div>
 
-    <!-- 電腦版：分館切換 + 側欄月份 + 右側表格 -->
+    <!-- 電腦 -->
     <div class="hidden md:grid md:grid-cols-12 md:gap-6">
       <aside class="md:col-span-3">
         <div class="mb-4 flex gap-2">
@@ -212,15 +177,7 @@
       <div class="md:col-span-9">
         <div class="overflow-auto rounded-2xl border">
           <table class="min-w-full text-sm">
-            <thead class="bg-gray-50">
-              <tr>
-                <th class="p-3 text-left">日期</th>
-                <th class="p-3 text-left">課程</th>
-                <th class="p-3 text-left">時間</th>
-                <th class="p-3 text-left">教練</th>
-                <th class="p-3 text-left">館別</th>
-              </tr>
-            </thead>
+            <thead class="bg-gray-50"><tr><th class="p-3 text-left">日期</th><th class="p-3 text-left">課程</th><th class="p-3 text-left">時間</th><th class="p-3 text-left">教練</th><th class="p-3 text-left">館別</th></tr></thead>
             <tbody id="desktopTableBody"></tbody>
           </table>
         </div>
@@ -232,21 +189,9 @@
   <section class="max-w-7xl mx-auto px-4 py-12" id="coaches">
     <h2 class="text-2xl font-bold mb-4">師資與資歷</h2>
     <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-      <div class="p-6 rounded-2xl border">
-        <div class="h-40 rounded-xl bg-gray-100 mb-4 flex items-center justify-center">教練照片</div>
-        <h3 class="font-bold">A 教練</h3>
-        <p class="text-gray-600 text-sm mt-1">國際級段位｜自由品勢／競技戰術｜常駐：崇武・TDS</p>
-      </div>
-      <div class="p-6 rounded-2xl border">
-        <div class="h-40 rounded-xl bg-gray-100 mb-4 flex items-center justify-center">教練照片</div>
-        <h3 class="font-bold">B 教練</h3>
-        <p class="text-gray-600 text-sm mt-1">國手教練團｜品勢基礎／表現力｜常駐：尚武</p>
-      </div>
-      <div class="p-6 rounded-2xl border">
-        <div class="h-40 rounded-xl bg-gray-100 mb-4 flex items-center justify-center">教練照片</div>
-        <h3 class="font-bold">C 教練</h3>
-        <p class="text-gray-600 text-sm mt-1">幼兒啟蒙｜安全體能｜常駐：尚武</p>
-      </div>
+      <div class="p-6 rounded-2xl border"><div class="h-40 rounded-xl bg-gray-100 mb-4 flex items-center justify-center">教練照片</div><h3 class="font-bold">A 教練</h3><p class="text-gray-600 text-sm mt-1">國際級段位｜自由品勢／競技戰術｜常駐：崇武・TDS</p></div>
+      <div class="p-6 rounded-2xl border"><div class="h-40 rounded-xl bg-gray-100 mb-4 flex items-center justify-center">教練照片</div><h3 class="font-bold">B 教練</h3><p class="text-gray-600 text-sm mt-1">國手教練團｜品勢基礎／表現力｜常駐：尚武</p></div>
+      <div class="p-6 rounded-2xl border"><div class="h-40 rounded-xl bg-gray-100 mb-4 flex items-center justify-center">教練照片</div><h3 class="font-bold">C 教練</h3><p class="text-gray-600 text-sm mt-1">幼兒啟蒙｜安全體能｜常駐：尚武</p></div>
     </div>
   </section>
 
@@ -257,15 +202,8 @@
       <input required class="p-3 rounded-xl border" placeholder="家長姓名" />
       <input required class="p-3 rounded-xl border" placeholder="聯絡電話" />
       <input class="p-3 rounded-xl border md:col-span-2" placeholder="學生姓名 / 年齡" />
-      <select class="p-3 rounded-xl border">
-        <option>想體驗的課程</option>
-        <option>品勢班</option><option>對練班</option><option>自由品勢</option>
-        <option>跆舞班</option><option>初級班</option><option>幼兒班</option>
-      </select>
-      <select class="p-3 rounded-xl border">
-        <option>偏好館別</option>
-        <option>崇武</option><option>TDS</option><option>尚武</option>
-      </select>
+      <select class="p-3 rounded-xl border"><option>想體驗的課程</option><option>品勢班</option><option>對練班</option><option>自由品勢</option><option>跆舞班</option><option>初級班</option><option>幼兒班</option></select>
+      <select class="p-3 rounded-xl border"><option>偏好館別</option><option>崇武</option><option>TDS</option><option>尚武</option></select>
       <textarea class="p-3 rounded-xl border md:col-span-2" rows="4" placeholder="備註"></textarea>
       <button class="p-3 rounded-xl bg-black text-white md:col-span-2">送出</button>
     </form>
@@ -284,150 +222,67 @@
     <a href="https://line.me/" class="flex-1 p-3 rounded-xl border text-center">LINE 諮詢</a>
   </div>
 
-  <!-- 影片視窗偵測自動播放/暫停 -->
+  <!-- 時刻表腳本（示例資料） -->
   <script>
-    const vids = document.querySelectorAll('#highlights video');
-    if ('IntersectionObserver' in window) {
-      const io = new IntersectionObserver(entries => {
-        entries.forEach(e => {
-          const v = e.target;
-          if (e.isIntersecting) v.play().catch(()=>{});
-          else v.pause();
-        });
-      }, { threshold: 0.6 });
-      vids.forEach(v => io.observe(v));
-    }
-  </script>
-
-  <!-- 時刻表：月份 + 分館 切換（示例資料，請替換） -->
-  <script>
-    const months = [
-      { key: '2025-08', label: '8 月' },
-      { key: '2025-09', label: '9 月' },
-      { key: '2025-10', label: '10 月' },
-    ];
-
-    // 範例資料：以「月份 → 陣列」表示；每筆含館別
-    const scheduleData = {
-      '2025-08': [
-        { date: '8/25', course: '品勢班', time: '18:00-19:30', coach: 'A 教練', branch: '崇武' },
-        { date: '8/27', course: '對練班', time: '19:30-21:00', coach: 'B 教練', branch: '崇武' },
-        { date: '8/28', course: '自由品勢', time: '18:30-20:00', coach: 'A 教練', branch: 'TDS' },
-        { date: '8/30', course: '幼兒班', time: '16:00-17:00', coach: 'C 教練', branch: '尚武' },
+    const months=[{key:'2025-08',label:'8 月'},{key:'2025-09',label:'9 月'},{key:'2025-10',label:'10 月'}];
+    const scheduleData={
+      '2025-08':[
+        {date:'8/25',course:'品勢班',time:'18:00-19:30',coach:'A 教練',branch:'崇武'},
+        {date:'8/27',course:'對練班',time:'19:30-21:00',coach:'B 教練',branch:'崇武'},
+        {date:'8/28',course:'自由品勢',time:'18:30-20:00',coach:'A 教練',branch:'TDS'},
+        {date:'8/30',course:'幼兒班',time:'16:00-17:00',coach:'C 教練',branch:'尚武'},
       ],
-      '2025-09': [
-        { date: '9/03', course: '跆舞班', time: '17:00-18:00', coach: 'B 教練', branch: 'TDS' },
-        { date: '9/05', course: '品勢班', time: '18:00-19:30', coach: 'A 教練', branch: '崇武' },
-        { date: '9/07', course: '對練班', time: '19:30-21:00', coach: 'B 教練', branch: '崇武' },
-        { date: '9/12', course: '初級班', time: '18:00-19:00', coach: 'C 教練', branch: '尚武' },
+      '2025-09':[
+        {date:'9/03',course:'跆舞班',time:'17:00-18:00',coach:'B 教練',branch:'TDS'},
+        {date:'9/05',course:'品勢班',time:'18:00-19:30',coach:'A 教練',branch:'崇武'},
+        {date:'9/07',course:'對練班',time:'19:30-21:00',coach:'B 教練',branch:'崇武'},
+        {date:'9/12',course:'初級班',time:'18:00-19:00',coach:'C 教練',branch:'尚武'},
       ],
-      '2025-10': [
-        { date: '10/02', course: '自由品勢', time: '18:30-20:00', coach: 'A 教練', branch: 'TDS' },
-        { date: '10/05', course: '跆舞班', time: '17:00-18:00', coach: 'B 教練', branch: 'TDS' },
-        { date: '10/09', course: '幼兒班', time: '16:00-17:00', coach: 'C 教練', branch: '尚武' },
+      '2025-10':[
+        {date:'10/02',course:'自由品勢',time:'18:30-20:00',coach:'A 教練',branch:'TDS'},
+        {date:'10/05',course:'跆舞班',time:'17:00-18:00',coach:'B 教練',branch:'TDS'},
+        {date:'10/09',course:'幼兒班',time:'16:00-17:00',coach:'C 教練',branch:'尚武'},
       ],
     };
 
-    // 元素
-    const monthTabsMobile = document.getElementById('monthTabsMobile');
-    const branchSelectMobile = document.getElementById('branchSelectMobile');
-    const mobileList = document.getElementById('mobileList');
-    const monthTabsDesktop = document.getElementById('monthTabsDesktop');
-    const desktopTableBody = document.getElementById('desktopTableBody');
-    const branchBtns = () => Array.from(document.querySelectorAll('.branch-btn'));
+    const monthTabsMobile=document.getElementById('monthTabsMobile');
+    const branchSelectMobile=document.getElementById('branchSelectMobile');
+    const mobileList=document.getElementById('mobileList');
+    const monthTabsDesktop=document.getElementById('monthTabsDesktop');
+    const desktopTableBody=document.getElementById('desktopTableBody');
+    const branchBtns=()=>Array.from(document.querySelectorAll('.branch-btn'));
 
-    // 狀態
-    let currentMonth = months[0].key;
-    let currentBranch = '崇武';
+    let currentMonth=months[0]?.key||'', currentBranch='崇武';
 
-    // Render Tabs
-    function renderTabs() {
-      // Mobile
-      monthTabsMobile.innerHTML = months.map((m, i) => `
-        <button data-month="${m.key}" class="snap-start px-4 py-2 rounded-xl border ${m.key===currentMonth?'bg-black text-white':''}">
-          ${m.label}
-        </button>
-      `).join('');
-      // Desktop
-      monthTabsDesktop.innerHTML = months.map((m) => `
-        <button data-month="${m.key}" class="w-full text-left px-4 py-2 rounded-xl border ${m.key===currentMonth?'bg-black text-white':''}">
-          ${m.label}
-        </button>
-      `).join('');
+    function renderTabs(){
+      if(monthTabsMobile) monthTabsMobile.innerHTML=months.map(m=>`<button data-month="${m.key}" class="snap-start px-4 py-2 rounded-xl border ${m.key===currentMonth?'bg-black text-white':''}">${m.label}</button>`).join('');
+      if(monthTabsDesktop) monthTabsDesktop.innerHTML=months.map(m=>`<button data-month="${m.key}" class="w-full text-left px-4 py-2 rounded-xl border ${m.key===currentMonth?'bg-black text-white':''}">${m.label}</button>`).join('');
     }
 
-    // Set Active
-    function setActive(monthKey, branch) {
-      if (monthKey) currentMonth = monthKey;
-      if (branch) currentBranch = branch;
+    function setActive(monthKey,branch){
+      if(monthKey) currentMonth=monthKey;
+      if(branch) currentBranch=branch;
 
-      // 更新 mobile tabs 樣式
-      [...monthTabsMobile.children].forEach(btn => {
-        btn.classList.toggle('bg-black', btn.dataset.month === currentMonth);
-        btn.classList.toggle('text-white', btn.dataset.month === currentMonth);
-      });
-      // 更新 desktop tabs 樣式
-      [...monthTabsDesktop.children].forEach(btn => {
-        btn.classList.toggle('bg-black', btn.dataset.month === currentMonth);
-        btn.classList.toggle('text-white', btn.dataset.month === currentMonth);
-      });
-      // 更新 desktop branch 按鈕
-      branchBtns().forEach(b=>{
-        b.classList.toggle('bg-black', b.dataset.branch === currentBranch);
-        b.classList.toggle('text-white', b.dataset.branch === currentBranch);
-      });
-      // 更新 mobile branch select
-      if (branchSelectMobile && branchSelectMobile.value !== currentBranch) {
-        branchSelectMobile.value = currentBranch;
-      }
+      if(monthTabsMobile) [...monthTabsMobile.children].forEach(b=>{b.classList.toggle('bg-black',b.dataset.month===currentMonth);b.classList.toggle('text-white',b.dataset.month===currentMonth);});
+      if(monthTabsDesktop) [...monthTabsDesktop.children].forEach(b=>{b.classList.toggle('bg-black',b.dataset.month===currentMonth);b.classList.toggle('text-white',b.dataset.month===currentMonth);});
+      branchBtns().forEach(b=>{b.classList.toggle('bg-black',b.dataset.branch===currentBranch);b.classList.toggle('text-white',b.dataset.branch===currentBranch);});
+      if(branchSelectMobile && branchSelectMobile.value!==currentBranch) branchSelectMobile.value=currentBranch;
 
-      // 資料篩選
-      const list = (scheduleData[currentMonth] || []).filter(r => r.branch === currentBranch);
+      const list=(scheduleData[currentMonth]||[]).filter(r=>r.branch===currentBranch);
 
-      // Mobile list
-      mobileList.innerHTML = list.map(row => `
-        <div class="p-4 rounded-2xl border">
-          <div class="font-semibold">${row.date}｜${row.course}</div>
-          <div class="text-gray-600 text-sm mt-1">${row.time}・${row.coach}・${row.branch}</div>
-        </div>
-      `).join('') || '<div class="text-gray-500">本館本月尚無課表</div>';
-
-      // Desktop table
-      desktopTableBody.innerHTML = list.map(row => `
-        <tr class="border-t">
-          <td class="p-3">${row.date}</td>
-          <td class="p-3">${row.course}</td>
-          <td class="p-3">${row.time}</td>
-          <td class="p-3">${row.coach}</td>
-          <td class="p-3">${row.branch}</td>
-        </tr>
-      `).join('') || '<tr class="border-t"><td class="p-3 text-gray-500" colspan="5">本館本月尚無課表</td></tr>';
+      if(mobileList) mobileList.innerHTML=list.length?list.map(r=>`<div class="p-4 rounded-2xl border"><div class="font-semibold">${r.date}｜${r.course}</div><div class="text-gray-600 text-sm mt-1">${r.time}・${r.coach}・${r.branch}</div></div>`).join(''):'<div class="text-gray-500">本館本月尚無課表</div>';
+      if(desktopTableBody) desktopTableBody.innerHTML=list.length?list.map(r=>`<tr class="border-t"><td class="p-3">${r.date}</td><td class="p-3">${r.course}</td><td class="p-3">${r.time}</td><td class="p-3">${r.coach}</td><td class="p-3">${r.branch}</td></tr>`).join(''):'<tr class="border-t"><td class="p-3 text-gray-500" colspan="5">本館本月尚無課表</td></tr>';
     }
 
-    // 綁定事件
-    function bindEvents() {
-      monthTabsMobile.addEventListener('click', (e) => {
-        const btn = e.target.closest('button[data-month]');
-        if (!btn) return;
-        setActive(btn.dataset.month, null);
-      });
-      monthTabsDesktop.addEventListener('click', (e) => {
-        const btn = e.target.closest('button[data-month]');
-        if (!btn) return;
-        setActive(btn.dataset.month, null);
-      });
-      if (branchSelectMobile) {
-        branchSelectMobile.addEventListener('change', (e)=> setActive(null, e.target.value));
-      }
-      branchBtns().forEach(b=> b.addEventListener('click', ()=> setActive(null, b.dataset.branch)));
+    function bindEvents(){
+      if(monthTabsMobile) monthTabsMobile.addEventListener('click',e=>{const b=e.target.closest('button[data-month]'); if(b) setActive(b.dataset.month,null);});
+      if(monthTabsDesktop) monthTabsDesktop.addEventListener('click',e=>{const b=e.target.closest('button[data-month]'); if(b) setActive(b.dataset.month,null);});
+      if(branchSelectMobile) branchSelectMobile.addEventListener('change',e=>setActive(null,e.target.value));
+      branchBtns().forEach(b=>b.addEventListener('click',()=>setActive(null,b.dataset.branch)));
     }
 
-    // 初始化
-    renderTabs();
-    bindEvents();
-    setActive(currentMonth, currentBranch);
+    renderTabs(); bindEvents(); setActive(currentMonth,currentBranch);
   </script>
 </body>
 </html>
-
 
